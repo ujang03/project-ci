@@ -52,3 +52,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//routing controller ADMIN
+$route['admin']='Admin/index';
+$route['admin/user']='AdminUser/index';
+$route['admin/barang']='AdminBarang/index';
+$route['admin/checkpinjam']='CekPinjam/index';
+$route['admin/checkkembali']='CekKembali/index';
+$route['admin/report']='Report/index';
+
+//routing controller USER
+$route['user']='User/index';
+$route['user/formpinjam']='FormPinjam/index';
+$route['user/formkembali']='FormKembali/index';
+$route['user/report']='ReportPinjam/index';
