@@ -23,12 +23,15 @@
                             <th>Opsi</th>
                         </tr>
                     </thead>
+                <?php 
+                foreach ($barang as $item){
+                ?>
     <tbody>    
     <tr>
-        <td>id_barang</td>
-        <td><a style="text-decoration:none; color:black;">nama_barang</a></td>
-        <td>stok_barang</td>
-        <td>jenis_barang</td>
+        <td><?= $item->id_barang?></td>
+        <td><a style="text-decoration:none; color:black;"><?= $item->nama_barang?></a></td>
+        <td><?= $item->stok_barang?></td>
+        <td><?= $item->jenis_barang?></td>
         <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit'id_barang'"> <i class="fa fa-pen"></i> </button>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete'id_barang'"> <i class="fa fa-trash"></i> </button></td>
     </tr>
@@ -80,6 +83,7 @@
             </div>
         </div>
         </tbody>
+        <?php }?>
         </table>
             </div>
         </div>
@@ -98,12 +102,12 @@
             </div>
             
             <!-- Modal body -->
-            <form method="POST">
+            <form method="POST" action="<?php echo base_url('admin/barang/store')?>">
                 <div class="modal-body">
-                <input type="text" name="kodeBarang" placeholder="Kode Barang" class="form-control" required><br>
-                <input type="text" name="namaBarang" placeholder="Nama Barang" class="form-control" required><br>
-                <input type="number" name="stokBarang" placeholder="Stok Barang" class="form-control" required><br>
-                <select name="jenis_barang" placeholder="Jenis barang" class="form-control" required>
+            
+                <input type="text" name="nama_barang" placeholder="Nama Barang" class="form-control" required><br>
+                <input type="number" name="stok_barang" placeholder="Stok Barang" class="form-control" required><br>
+                <select name="jenis_barang" placeholder="Jenis_barang" class="form-control" required>
                 <option value="pcs">Pcs</option>
                 <option value="meter">Meter</option>
                 </select><br>

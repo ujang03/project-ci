@@ -30,7 +30,7 @@
                             <td> nama_barang</td>
                             <td> jumlah_barang</td>
                             <td> tgl_peminjaman</td>
-                            <td> status</td>
+                            <td>'status'=="Approved":"checked"</td>
                             <td><button class="btn btn-info">Detail</button></td>
                         </tr>
                         </form>

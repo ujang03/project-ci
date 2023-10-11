@@ -57,6 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['admin']='Admin/index';
 $route['admin/user']='AdminUser/index';
 $route['admin/barang']='AdminBarang/index';
+$route['admin/barang/store']='AdminBarang/store';
 $route['admin/checkpinjam']='CekPinjam/index';
 $route['admin/checkkembali']='CekKembali/index';
 $route['admin/report']='Report/index';
