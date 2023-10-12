@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="card mb-4 mt-4">
         <div class="card-header d-flex justify-content-between">
-            <h1 class="mt-1"><b>User</b></h1>
+            <h1 class="mt-1"><b>Jenis Barang</b></h1>
 
             <!-- Button to Open the Modal -->
             <div class="mt-2">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    Add User
+                    Add Item
                 </button>
 
             </div>
@@ -18,24 +18,16 @@
                         <tr>
                             <th>Id</th>
                             <th>Nama</th>
-                            <th>email</th>
-                            <th>Image</th>
-                            <th>Password</th>
-                            <th>Role ID</th>
-                            <th>Is Active</th>
+                            <th>is_actived</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <?php
-                    foreach ($user as $item) {
+                    foreach ($jenis as $item) {
                     ?>
                         <tbody>
                             <tr>
                                 <td><?= $item->id?></td>
-                                <td><?= $item->name?></td>
-                                <td><?= $item->email?></td>
-                                <td><?= $item->image?></td>
-                                <td><?= $item->password?></td>
-                                <td><?= $item->role_id?></td>
                                 <td><a style="text-decoration:none; color:black;"><?= $item->nama ?></a></td>
                                 <td><?= ($item->is_actived == 1) ? 'Active' : 'Deactive' ?></td>
                                 <td>
@@ -58,7 +50,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Tambah User</h4>
+                <h4 class="modal-title">Tambah Jenis Barang</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 

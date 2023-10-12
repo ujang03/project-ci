@@ -76,7 +76,8 @@
         <div id="collapseBarang" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?=base_url('admin/user'); ?>">User</a>
-                <a class="collapse-item" href="<?=base_url('admin/barang'); ?>">Barang</a>
+            <a class="collapse-item" href="<?=base_url('admin/jenisbarang'); ?>">Jenis Barang</a>
+            <a class="collapse-item" href="<?=base_url('admin/barang'); ?>">Barang</a>
         
             </div>
         </div>

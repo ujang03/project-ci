@@ -13,7 +13,12 @@ class BarangAdmin_model extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        $this->db->select('tb_barang.*,tb_jenis_barang.nama');
+        $this->db->from('tb_barang');
+        $this->db->join('tb_jenis_barang','tb_barang.jenis_barang=tb_jenis_barang.id');
+        $query=$this->db->get()->result();
+
+        return $query;
     }
     
     public function getById($id)

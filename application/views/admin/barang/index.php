@@ -8,7 +8,6 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                     Add Item
                 </button>
-
             </div>
         </div>
         <div class="card-body">
@@ -28,10 +27,10 @@
                     ?>
                         <tbody>
                             <tr>
-                                <td><?= $item->id_barang ?></td>
+                                <td><?= $item->id_barang?></td>
                                 <td><a style="text-decoration:none; color:black;"><?= $item->nama_barang ?></a></td>
                                 <td><?= $item->stok_barang ?></td>
-                                <td><?= $item->jenis_barang ?></td>
+                                <td><?= $item->nama ?></td>
                                 <td>
                                     <a class="btn btn-warning" href="<?= base_url('AdminBarang/edit') ?>/<?= $item->id_barang ?>"><i class="fa fa-pen"></i></a>
                                     <a class="btn btn-danger" onclick="deleteConfirm('<?= base_url('AdminBarang/delete/') . $item->id_barang ?>')" > <i class="fa fa-trash"></i> </a>
@@ -63,8 +62,11 @@
                     <input type="text" name="nama_barang" placeholder="Nama Barang" class="form-control" required><br>
                     <input type="number" name="stok_barang" placeholder="Stok Barang" class="form-control" required><br>
                     <select name="jenis_barang" placeholder="Jenis_barang" class="form-control" required>
-                        <option value="pcs">Pcs</option>
-                        <option value="meter">Meter</option>
+                    <?php
+                    foreach ($jenis as $item) {
+                    ?>
+                        <option value="<?= $item->id ?>"><?= $item->nama ?></option>
+                    <?php }; ?>
                     </select><br>
                     <button type="submit" class="btn btn-primary" name="tambahBarang">Submit</button>
                 </div>
