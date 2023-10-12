@@ -29,6 +29,31 @@ class AdminBarang extends CI_Controller
         $barang=$this->barangadmin_model;
         $barang->save();
 
-        $this->load->view('admin/barang/index');
+        redirect('admin/barang');
+    }
+
+    public function edit($id){
+        $query = $this->barangadmin_model->getById($id);
+        $data['user'] = $this->db->get_where('user', ['Email' => $this->session->userdata('email')])->row_array();
+        $data['dataBarang'] = $query;
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar_Ad',);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/barang/edit', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function update(){
+        $barang=$this->barangadmin_model;
+        $barang->update();
+
+        redirect('admin/barang');
+    }
+
+    public function delete($id){
+        if($this->barangadmin_model->delete($id)){
+            redirect('admin/barang');
+        }
     }
 }
