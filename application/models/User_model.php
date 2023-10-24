@@ -32,8 +32,18 @@ class User_model extends CI_Model
     {
         $post = $this->input->post();
 
-        $this->nama = $post["nama"];
-        $this->nama = $post["role_id"];
+        $role = $post["role_id"];
+        if ($role == 1 ){
+            $this->password= password_hash("admin", PASSWORD_DEFAULT);
+
+        } else if ($role == 2){
+            $this ->password= password_hash("user", PASSWORD_DEFAULT);
+
+        }
+
+        $this->name = $post["nama"];
+        $this->role_id = $post["role_id"];
+        $this->email= $post["email"];
         $this->is_actived = $post["is_actived"];
         return $this->db->insert($this->_table, $this);
     }
@@ -42,9 +52,10 @@ class User_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id = $post["id"];
-        $this->nama = $post["name"];
+        $this->name = $post["name"];
         $this->email = $post["email"];
-        $this->is_actived = $post["is_actived"];
+        $this->role_id = $post["role_id"];
+    
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }
 

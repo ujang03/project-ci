@@ -5,9 +5,9 @@
 
             <!-- Button to Open the Modal -->
             <div class="mt-2">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                     Add User
-                </button>
+                </button> -->
 
             </div>
         </div>
@@ -35,8 +35,8 @@
                                 <td><?= $item->role?></td>
                                 <td><?= ($item->is_actived == 1) ? 'Active' : 'Deactive' ?></td>
                                 <td>
-                                    <a class="btn btn-warning" href="<?= base_url('AdminBarang/edit') ?>/<?= $item->id?>"><i class="fa fa-pen"></i></a>
-                                    <a class="btn btn-danger" onclick="deleteConfirm('<?= base_url('AdminBarang/delete/') . $item->id?>')" > <i class="fa fa-trash"></i> </a>
+                                    <a class="btn btn-warning" href="<?= base_url('AdminUser/edit') ?>/<?= $item->id?>"><i class="fa fa-pen"></i></a>
+                                    <a class="btn btn-danger" onclick="deleteConfirm('<?= base_url('AdminUser/delete/') . $item->id?>')" > <i class="fa fa-trash"></i> </a>
                                 </td>
                             </tr>
                         </tbody>
@@ -52,23 +52,30 @@
     <div class="modal-dialog">
         <div class="modal-content">
 
-            <!-- Modal Header -->
+            <!-- Modal Header
             <div class="modal-header">
                 <h4 class="modal-title">Tambah User</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
+            </div> -->
 
             <!-- Modal body -->
             <form method="POST" action="<?php echo base_url('admin/user/store') ?>">
                 <div class="modal-body">
 
                     <input type="text" name="nama" placeholder="Nama" class="form-control" required><br>
-                    <input type="text" name="role_id" placeholder="Role_id" class="form-control" required><br>
+                    <input type="text" name="email" placeholder="Email" class="form-control" required><br>
+                    <select name="role_id" placeholder="Role" class="form-control" required>
+                    <?php
+                    foreach ($roles as $role) {
+                    ?>
+                        <option value="<?= $role->id ?>"><?= $role->role ?></option>
+                    <?php }; ?>
+                    </select><br>
                     <select name="is_actived" placeholder="is_active" class="form-control" required>
                         <option value="1">actived</option>
                         <option value="0">deactived</option>
                     </select><br>
-                    <button type="submit" class="btn btn-primary" name="tambahJenisBarang">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
@@ -82,7 +89,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Hapus Barang</h4>
+                <h4 class="modal-title">Hapus User</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
