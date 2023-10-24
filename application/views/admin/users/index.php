@@ -19,24 +19,20 @@
                             <th>Id</th>
                             <th>Nama</th>
                             <th>email</th>
-                            <th>Image</th>
-                            <th>Password</th>
-                            <th>Role ID</th>
+                            <th>Role</th>
                             <th>Is Active</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <?php
-                    foreach ($user as $item) {
+                    foreach ($dataUser as $item) {
                     ?>
                         <tbody>
                             <tr>
                                 <td><?= $item->id?></td>
                                 <td><?= $item->name?></td>
                                 <td><?= $item->email?></td>
-                                <td><?= $item->image?></td>
-                                <td><?= $item->password?></td>
-                                <td><?= $item->role_id?></td>
-                                <td><a style="text-decoration:none; color:black;"><?= $item->nama ?></a></td>
+                                <td><?= $item->role?></td>
                                 <td><?= ($item->is_actived == 1) ? 'Active' : 'Deactive' ?></td>
                                 <td>
                                     <a class="btn btn-warning" href="<?= base_url('AdminBarang/edit') ?>/<?= $item->id?>"><i class="fa fa-pen"></i></a>
@@ -63,10 +59,11 @@
             </div>
 
             <!-- Modal body -->
-            <form method="POST" action="<?php echo base_url('admin/jenisbarang/store') ?>">
+            <form method="POST" action="<?php echo base_url('admin/user/store') ?>">
                 <div class="modal-body">
 
                     <input type="text" name="nama" placeholder="Nama" class="form-control" required><br>
+                    <input type="text" name="role_id" placeholder="Role_id" class="form-control" required><br>
                     <select name="is_actived" placeholder="is_active" class="form-control" required>
                         <option value="1">actived</option>
                         <option value="0">deactived</option>

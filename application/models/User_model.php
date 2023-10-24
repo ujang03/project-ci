@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class USer_model extends CI_Model
+class User_model extends CI_Model
 {
     private $_table = "user";
 
@@ -13,11 +13,14 @@ class USer_model extends CI_Model
     public $is_actived;
 
 
-
-
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        $this->db->select('user.*,user_role.role');
+        $this->db->from('user');
+        $this->db->join('user_role','user.role_id=user_role.id');
+        $query=$this->db->get()->result();
+
+        return $query;
     }
     
     public function getById($id)
@@ -30,6 +33,7 @@ class USer_model extends CI_Model
         $post = $this->input->post();
 
         $this->nama = $post["nama"];
+        $this->nama = $post["role_id"];
         $this->is_actived = $post["is_actived"];
         return $this->db->insert($this->_table, $this);
     }

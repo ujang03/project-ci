@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 //routing controller ADMIN
 $route['admin']='Admin/index';
 $route['admin/user']='AdminUser/index';
+$route['admin/user/store']='AdminUser/store';
 $route['admin/barang']='AdminBarang/index';
 $route['admin/barang/store']='AdminBarang/store';
 $route['admin/jenisbarang']='JenisBarang/index';
