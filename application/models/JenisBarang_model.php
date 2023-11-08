@@ -16,6 +16,12 @@ class JenisBarang_model extends CI_Model
         return $this->db->get($this->_table)->result();
     }
     
+    public function getActive()
+    {
+        return $this->db->get_where($this->_table, ["is_actived" => 1])->result();
+    }
+
+
     public function getById($id)
     {
         return $this->db->get_where($this->_table, ["id" => $id])->row();

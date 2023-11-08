@@ -18,8 +18,8 @@
                         <label for="is_actived" class="col-sm-2 col-form-label">Is Actived</label>
                         <div class="col-sm-10">
                             <select class="form-control" name="is_actived" id="is_actived">
-                                <option <?= $dataJenisBarang->is_actived == 'actived' ? 'Selected' : '' ?> value="pcs">Actived</option>
-                                <option <?= $dataJenisBarang->is_actived == 'deactived' ? 'Selected' : '' ?> value="meter">Deactived</option>
+                                <option <?= $dataJenisBarang->is_actived == 'actived' ? 'Selected' : '' ?> value="1">Actived</option>
+                                <option <?= $dataJenisBarang->is_actived == 'deactived' ? 'Selected' : '' ?> value="0">Deactived</option>
                             </select>
                         </div>
                     </div>

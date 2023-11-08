@@ -31,8 +31,8 @@
                                 <td><a style="text-decoration:none; color:black;"><?= $item->nama ?></a></td>
                                 <td><?= ($item->is_actived == 1) ? 'Active' : 'Deactive' ?></td>
                                 <td>
-                                    <a class="btn btn-warning" href="<?= base_url('AdminBarang/edit') ?>/<?= $item->id?>"><i class="fa fa-pen"></i></a>
-                                    <a class="btn btn-danger" onclick="deleteConfirm('<?= base_url('AdminBarang/delete/') . $item->id?>')" > <i class="fa fa-trash"></i> </a>
+                                    <a class="btn btn-warning" href="<?= base_url('JenisBarang/edit') ?>/<?= $item->id?>"><i class="fa fa-pen"></i></a>
+                                    <a class="btn btn-danger" onclick="deleteConfirm('<?= base_url('JenisBarang/delete/') . $item->id?>')" > <i class="fa fa-trash"></i> </a>
                                 </td>
                             </tr>
                         </tbody>

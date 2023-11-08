@@ -16,7 +16,7 @@ class AdminBarang extends CI_Controller
     public function index()
     {
         $data['barang'] = $this->barangadmin_model->getAll();
-        $data['jenis'] = $this->jenisbarang_model->getAll();
+        $data['jenis'] = $this->jenisbarang_model->getActive();
         $data['user'] = $this->db->get_where('user', ['Email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'Dasboard Admin';
 
@@ -35,6 +35,7 @@ class AdminBarang extends CI_Controller
     }
 
     public function edit($id){
+        $data['jenis'] = $this->jenisbarang_model->getAll();
         $query = $this->barangadmin_model->getById($id);
         $data['user'] = $this->db->get_where('user', ['Email' => $this->session->userdata('email')])->row_array();
         $data['dataBarang'] = $query;

@@ -25,10 +25,13 @@
                     <div class="row mb-3">
                         <label for="jenis_barang" class="col-sm-2 col-form-label">Jenis Barang</label>
                         <div class="col-sm-10">
-                            <select class="form-control" name="jenis_barang" id="jenis_barang">
-                                <option <?= $dataBarang->jenis_barang == 'pcs' ? 'Selected' : '' ?> value="pcs">Pcs</option>
-                                <option <?= $dataBarang->jenis_barang == 'meter' ? 'Selected' : '' ?> value="meter">Meter</option>
-                            </select>
+                           <select name="jenis_barang" placeholder="Jenis_barang" class="form-control" required>
+                    <?php
+                    foreach ($jenis as $item) {
+                    ?>
+                        <option value="<?= $item->id ?>"><?= $item->nama ?></option>
+                    <?php }; ?>
+                    </select><br>
                         </div>
                     </div>
 

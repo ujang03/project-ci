@@ -32,10 +32,8 @@
             </table>
         </div>
     </div>
-</div>
+    </div>
 </div>
 </main>
 </form>
-</div>
-</div>
 </div>
