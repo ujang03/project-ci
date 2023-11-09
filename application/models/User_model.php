@@ -55,6 +55,7 @@ class User_model extends CI_Model
         $this->name = $post["name"];
         $this->email = $post["email"];
         $this->role_id = $post["role_id"];
+        $this->is_actived = $post["is_actived"];
     
         return $this->db->update($this->_table, $this, array('id' => $post['id']));
     }

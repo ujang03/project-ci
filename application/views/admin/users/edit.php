@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label for="jenis_barang" class="col-sm-2 col-form-label">Role ID</label>
+                        <label for="role_id" class="col-sm-2 col-form-label">Role ID</label>
                         <div class="col-sm-10">
                         <select name="role_id" placeholder="Role" class="form-control" required>
                     <?php
@@ -31,6 +31,18 @@
                     ?>
                         <option value="<?= $role->id ?>"><?= $role->role ?></option>
                     <?php }; ?>
+                    </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="is_actived" class="col-sm-2 col-form-label">Actived</label>
+                        <div class="col-sm-10">
+                        <select name="is_actived" placeholder="Role" class="form-control" required>
+                    
+                        <option value="1">active</option>
+                        <option value="0">deactive</option>
+                    
                     </select>
                         </div>
                     </div>
