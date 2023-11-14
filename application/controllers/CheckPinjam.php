@@ -4,7 +4,7 @@ use PharIo\Manifest\Email;
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class CekPinjam extends CI_Controller
+class CheckPinjam extends CI_Controller
 {
     public function index()
     {

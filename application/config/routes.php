@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -54,20 +54,22 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //routing controller ADMIN
-$route['admin']='Admin/index';
-$route['admin/user']='AdminUser/index';
-$route['admin/user/store']='AdminUser/store';
-$route['admin/barang']='AdminBarang/index';
-$route['admin/barang/store']='AdminBarang/store';
-$route['admin/jenisbarang']='JenisBarang/index';
-$route['admin/jenisbarang/store']='JenisBarang/store';
-$route['admin/checkpinjam']='CekPinjam/index';
-$route['admin/checkkembali']='CekKembali/index';
-$route['admin/report']='Report/index';
+$route['admin'] = 'Admin/index';
+$route['admin/user'] = 'AdminUser/index';
+$route['admin/user/store'] = 'AdminUser/store';
+$route['admin/barang'] = 'AdminBarang/index';
+$route['admin/barang/store'] = 'AdminBarang/store';
+$route['admin/jenisbarang'] = 'JenisBarang/index';
+$route['admin/jenisbarang/store'] = 'JenisBarang/store';
+$route['admin/checkpinjam'] = 'CheckPinjam/index';
+$route['admin/checkpinjam/store'] = 'Checkpinjam/store';
+$route['admin/checkkembali'] = 'CheckKembali/index';
+$route['admin/report'] = 'Report/index';
+
 
 
 //routing controller USER
-$route['user']='User/index';
-$route['user/formpinjam']='FormPinjam/index';
-$route['user/formkembali']='FormKembali/index';
-$route['user/report']='ReportPinjam/index';
+$route['user'] = 'User/index';
+$route['user/formpinjam'] = 'FormPinjam/index';
+$route['user/formkembali'] = 'FormKembali/index';
+$route['user/report'] = 'ReportPinjam/index';
