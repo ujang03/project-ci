@@ -11,6 +11,7 @@ class User extends CI_Controller
 
         $data['user'] = $this->db->get_where('user', ['Email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'My Profile';
+        is_logged_in();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar_Us');

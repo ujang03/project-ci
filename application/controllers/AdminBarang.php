@@ -11,6 +11,9 @@ class AdminBarang extends CI_Controller
         parent::__construct();
         $this->load->model("barangadmin_model");
         $this->load->model("jenisbarang_model");
+        is_logged_in();
+        
+
     }
 
     public function index()

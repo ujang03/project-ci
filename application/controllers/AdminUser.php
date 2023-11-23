@@ -11,6 +11,7 @@ class AdminUser extends CI_Controller
     parent::__construct();
     $this->load->model("user_model");
     $this->load->model("role_model");
+    is_logged_in();
 
 }
     public function index()

@@ -6,6 +6,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+    public function __construct() 
+    {
+        parent::__construct();
+        is_logged_in();
+        if($this->session->userdata('role_id') !=1){
+            $url=base_url('auth');
+            redirect($url);
+		};
+    }
     public function index()
     {
 

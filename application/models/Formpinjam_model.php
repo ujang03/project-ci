@@ -43,8 +43,7 @@ class FormPinjam_model extends CI_Model
         $this->id_user = $post["user_id"];
         $this->jumlah_barang = $post["jumlah_barang"];
         $this->id_barang = $post["id_barang"];
-        $this->db->insert("tb_detail_peminjaman")
-        
+        $this->db->insert("tb_detail_peminjaman");
     }
 
     public function update()
