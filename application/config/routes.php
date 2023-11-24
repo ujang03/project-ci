@@ -67,9 +67,9 @@ $route['admin/checkkembali'] = 'CheckKembali/index';
 $route['admin/report'] = 'Report/index';
 
 
-
 //routing controller USER
 $route['user'] = 'User/index';
 $route['user/formpinjam'] = 'FormPinjam/index';
 $route['user/formkembali'] = 'FormKembali/index';
 $route['user/report'] = 'ReportPinjam/index';
+$route['user/formpinjam/save'] = 'FormPinjam/store';

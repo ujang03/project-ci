@@ -8,14 +8,23 @@ class FormPinjam_model extends CI_Model
     public $tgl_peminjaman;
     public $tgl_pengembalian;
     public $is_completed;
-    public $id_peminjam;
     public $id_user;
     public $id_barang;
     public $jumlah_barang;
+    public $tujuan;
 
 
-    public function getAll()
+    public function getAll($user_id)
     {
+        $this->db->select('tb_peminjam.*,tb_barang.nama_barang');
+        $this->db->from('tb_peminjam');
+        $this->db->join('tb_barang', 'tb_peminjam.id_barang=tb_barang.id_barang');
+        $this->db->where('tb_peminjam.id_user=', $user_id);
+        $query = $this->db->get()->result();
+
+        return $query;
+
+
         return $this->db->get($this->_table)->result();
     }
 
@@ -34,16 +43,26 @@ class FormPinjam_model extends CI_Model
     {
         $post = $this->input->post();
 
-        $this->tgl_peminjaman = $post["tgl_peminjaman"];
-        $this->is_completed = 0;
-        $this->db->insert($this->_table, $this);
-        $insert_id = $this->db->insert_id();
+        // $this->tgl_peminjaman = $post["tgl_peminjaman"];
+        // $this->is_completed = 0;
+        // $this->db->insert($this->_table, $this);
+        // $insert_id = $this->db->insert_id();
 
-        $this->id_peminjam = $insert_id;
-        $this->id_user = $post["user_id"];
+        // $this->id_peminjam = $insert_id;
+        // $this->id_user = $post["user_id"];
+        // $this->jumlah_barang = $post["jumlah_barang"];
+        // $this->id_barang = $post["id_barang"];
+        // $this->db->insert("tb_detail_peminjaman");
+
+        $this->tgl_peminjaman = $post["tgl_peminjaman"];
+        $this->tgl_pengembalian = $post["tgl_pengembalian"];
+        $this->tujuan = $post["tujuan"];
+        $this->id_user = $post["id_user"];
         $this->jumlah_barang = $post["jumlah_barang"];
         $this->id_barang = $post["id_barang"];
-        $this->db->insert("tb_detail_peminjaman");
+        $this->is_completed = 0;
+
+        return $this->db->insert($this->_table, $this);
     }
 
     public function update()

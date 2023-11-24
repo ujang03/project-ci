@@ -10,6 +10,7 @@ class FormPinjam extends CI_Controller
     {
         parent::__construct();
         $this->load->model("barangadmin_model");
+        $this->load->model("formpinjam_model");
     }
 
     public function index()
@@ -17,7 +18,8 @@ class FormPinjam extends CI_Controller
         $data['barang'] = $this->barangadmin_model->getAll();
         $data['user'] = $this->db->get_where('user', ['Email' => $this->session->userdata('email')])->row_array();
         $data['title'] = 'My Profile';
-
+        $user_id = $this->session->id;
+        $data['formpinjam'] = $this->formpinjam_model->getAll($user_id);
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar_Us',);
@@ -31,6 +33,6 @@ class FormPinjam extends CI_Controller
         $barang = $this->formpinjam_model;
         $barang->save();
 
-        redirect('admin/barang');
+        redirect('user/formpinjam');
     }
 }
