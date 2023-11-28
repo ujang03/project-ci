@@ -76,9 +76,18 @@
                                                             <td><?= $form->tgl_peminjaman ?></td>
                                                             <td><?= $form->tgl_pengembalian ?></td>
                                                             <td><?= $form->tujuan ?></td>
-                                                            <td><?= $form->is_completed == 0 ? "Pending" : "Approved" ?></td>
+                                                            <td><?php switch ($form->is_completed) {
+                                                                    case '1':
+                                                                        echo "Approved";
+                                                                        break;
+                                                                    case '2':
+                                                                        echo "DisApprove";
+                                                                        break;
+                                                                    default:
+                                                                        echo "Wait for Approve";
+                                                                } ?></td>
                                                             <td>
-                                                                <a class="btn btn-success" onclick="deleteConfirm('<?= base_url('AdminBarang/delete/') . $form->id ?>')"> <i class="fa fa-print"></i> </a>
+                                                                <a class="btn btn-success" onclick="deleteConfirm('<?= base_url('user/formpinjam') . $form->id ?>')"> <i class="fa fa-print"></i> </a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
