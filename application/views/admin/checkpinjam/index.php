@@ -55,7 +55,7 @@
                                         <a href='<?php echo base_url('admin/checkpinjam/approve/'), $b->id ?>' type='button' class='btn btn-primary'><i class='fa-solid fa-check'></i></a>
                                     <?php } else { ?>
                                         <a href='<?php echo base_url('admin/checkpinjam/approve/'), $b->id ?>' type='button' class='btn btn-primary'><i class='fa-solid fa-check'></i></a>
-                                        <a href='<?php echo base_url('admin/checkpinjam/disapprove/'), $b->id ?>' type='button' class='btn btn-danger'><i class='fa-solid fa-x'></i></a>
+                                        <a href='<?php echo base_url('admin/checkpinjam/reject/'), $b->id ?>' type='button' class='btn btn-danger'><i class='fa-solid fa-x'></i></a>
                                     <?php } ?>
                                 </td>
                             </tr>

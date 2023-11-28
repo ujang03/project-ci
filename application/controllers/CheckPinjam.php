@@ -44,4 +44,12 @@ class CheckPinjam extends CI_Controller
 
         redirect('admin/checkpinjam');
     }
+
+    public function reject($id)
+    {
+        $pinjam = $this->checkpinjam_model;
+        $pinjam->reject($id);
+
+        redirect('admin/checkpinjam');
+    }
 }

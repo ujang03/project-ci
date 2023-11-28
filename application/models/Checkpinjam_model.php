@@ -66,7 +66,24 @@ class Checkpinjam_model extends CI_Model
 
     public function disapprove($id)
     {
-        $data = array('is_completed' => 2);
-        return $this->db->update($this->_table, $data, array('id' => $id));
+        $query = $this->db->select('jumlah_barang,id_barang')->where('id', $id)->get('tb_peminjam')->row();
+        $jumlah_minjam = $query->jumlah_barang;
+        $idbarang = $query->id_barang;
+
+        $queryBarang = $this->db->select('stok_barang')->where('id_barang', $idbarang)->get('tb_barang')->row();
+        $stok_barang = $queryBarang->stok_barang;
+
+        $jb_sekarang = $stok_barang + $jumlah_minjam;
+
+        $this->db->set('stok_barang', $jb_sekarang)->where('id_barang', $idbarang)->update('tb_barang');
+        $this->db->set('is_completed', 2)->where('id', $id)->update($this->_table);
+
+        return "Berhasil Update";
+    }
+
+    public function reject($id)
+    {
+        $this->db->set('is_completed', 2)->where('id', $id)->update($this->_table);
+        return "Peminjaman di tolak";
     }
 }

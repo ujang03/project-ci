@@ -64,6 +64,7 @@ $route['admin/jenisbarang/store'] = 'JenisBarang/store';
 $route['admin/checkpinjam'] = 'CheckPinjam/index';
 $route['admin/checkpinjam/approve/(:num)'] = 'CheckPinjam/approve/$1';
 $route['admin/checkpinjam/disapprove/(:num)'] = 'CheckPinjam/disapprove/$1';
+$route['admin/checkpinjam/reject/(:num)'] = 'CheckPinjam/reject/$1';
 $route['admin/checkpinjam/store'] = 'Checkpinjam/store';
 $route['admin/checkkembali'] = 'CheckKembali/index';
 $route['admin/report'] = 'Report/index';
