@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div class="card mb-4 mt-4">
         <div class="card-header d-flex justify-content-between">
-            <h4>Form Pengajuan Peminjaman</h4>
+            <h4>Checking Pengajuan Peminjaman</h4>
             <div class="mt-2">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                     Tambah Peminjaman
-                </button>
+                </button> -->
             </div>
         </div>
         <div class="card-body">

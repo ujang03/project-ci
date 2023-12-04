@@ -26,7 +26,7 @@
                     <div class="stat-icon dib"><img style="width: 85px;" src='<?= base_url('assets/'); ?>img/converter_hdmi.png' alt="">
                     </div>
                     <div class="stat-content dib">
-                        <div class="stat-text">Converter HDMI</div>
+                        <div class="stat-text"></div>
                         <div class="stat-digit">1,012</div>
                     </div>
                 </div>
