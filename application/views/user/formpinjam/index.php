@@ -76,16 +76,19 @@
                                                             <td><?= $form->tgl_peminjaman ?></td>
                                                             <td><?= $form->tgl_pengembalian ?></td>
                                                             <td><?= $form->tujuan ?></td>
-                                                            <td><?php switch ($form->is_completed) {
-                                                                    case '1':
+                                                            <td><?php
+                                                                if ($form->is_completed == 1) {
+                                                                    if ($form->is_return == 1) {
+                                                                        echo "Barang Sudah Kembali";
+                                                                    } else {
                                                                         echo "Approved";
-                                                                        break;
-                                                                    case '2':
-                                                                        echo "DisApprove";
-                                                                        break;
-                                                                    default:
-                                                                        echo "Wait for Approve";
-                                                                } ?></td>
+                                                                    }
+                                                                } elseif ($form->is_completed == 2) {
+                                                                    echo "Disapproved";
+                                                                } else {
+                                                                    echo "Barang belum di approve";
+                                                                }
+                                                                ?></td>
                                                             <td>
                                                                 <a class="btn btn-success" onclick="deleteConfirm('<?= base_url('user/formpinjam') . $form->id ?>')"> <i class="fa fa-print"></i> </a>
                                                             </td>

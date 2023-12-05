@@ -37,25 +37,31 @@
                                 <td><?= $b->nama_barang ?></td>
                                 <td><?= $b->jumlah_barang ?></td>
                                 <td><?= $b->tujuan ?></td>
-                                <td><?php switch ($b->is_completed) {
-                                        case '1':
+                                <td><?php
+                                    if ($b->is_completed == 1) {
+                                        if ($b->is_return == 1) {
+                                            echo "Barang Sudah Kembali";
+                                        } else {
                                             echo "Approved";
-                                            break;
-                                        case '2':
-                                            echo "DisApprove";
-                                            break;
-                                        default:
-                                            echo "Wait for Approve";
-                                    } ?>
+                                        }
+                                    } elseif ($b->is_completed == 2) {
+                                        echo "Disapproved";
+                                    } else {
+                                        echo "Barang belum di approve";
+                                    }
+                                    ?>
                                 </td>
                                 <td>
                                     <?php if ($b->is_completed == 1) { ?>
-                                        <a href='<?php echo base_url('admin/checkpinjam/disapprove/'), $b->id ?>' type='button' class='btn btn-danger'><i class='fa-solid fa-x'></i></a>
+                                        <?php if ($b->is_return == 0) { ?>
+                                            <a href='<?php echo base_url('admin/checkpinjam/return/'), $b->id ?>' type='button' class='btn btn-success btn-sm'>Return</a>
+                                            <a href='<?php echo base_url('admin/checkpinjam/disapprove/'), $b->id ?>' type='button' class='btn btn-danger btn-sm'><i class='fa-solid fa-x'></i></a>
+                                        <?php } ?>
                                     <?php } elseif ($b->is_completed == 2) { ?>
-                                        <a href='<?php echo base_url('admin/checkpinjam/approve/'), $b->id ?>' type='button' class='btn btn-primary'><i class='fa-solid fa-check'></i></a>
+                                        <a href='<?php echo base_url('admin/checkpinjam/approve/'), $b->id ?>' type='button' class='btn btn-primary btn-sm'><i class='fa-solid fa-check'></i></a>
                                     <?php } else { ?>
-                                        <a href='<?php echo base_url('admin/checkpinjam/approve/'), $b->id ?>' type='button' class='btn btn-primary'><i class='fa-solid fa-check'></i></a>
-                                        <a href='<?php echo base_url('admin/checkpinjam/reject/'), $b->id ?>' type='button' class='btn btn-danger'><i class='fa-solid fa-x'></i></a>
+                                        <a href='<?php echo base_url('admin/checkpinjam/approve/'), $b->id ?>' type='button' class='btn btn-primary btn-sm'><i class='fa-solid fa-check'></i></a>
+                                        <a href='<?php echo base_url('admin/checkpinjam/reject/'), $b->id ?>' type='button' class='btn btn-danger btn-sm'><i class='fa-solid fa-x'></i></a>
                                     <?php } ?>
                                 </td>
                             </tr>

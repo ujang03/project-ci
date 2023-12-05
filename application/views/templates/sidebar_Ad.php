@@ -53,8 +53,7 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-table"></i>
             <span>Form User</span>
         </a>
@@ -62,38 +61,36 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Form Utilities</h6>
                 <a class="collapse-item" href="<?= base_url('admin/checkpinjam'); ?>">Check Peminjaman</a>
-                <a class="collapse-item" href="<?= base_url('admin/checkkembali'); ?>">Check Pengembalian</a>
-            </div>
-        </div>
-    </li>
- <!-- Nav Item - Pages Collapse Menu -->
- <li class="nav-item">
-        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseBarang" aria-expanded="true"
-            aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Master Data</span>
-        </a>
-        <div id="collapseBarang" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?=base_url('admin/user'); ?>">User</a>
-            <a class="collapse-item" href="<?=base_url('admin/jenisbarang'); ?>">Jenis Barang</a>
-            <a class="collapse-item" href="<?=base_url('admin/barang'); ?>">Barang</a>
-        
+
             </div>
         </div>
     </li>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-            aria-controls="collapsePages">
+        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseBarang" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Master Data</span>
+        </a>
+        <div id="collapseBarang" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= base_url('admin/user'); ?>">User</a>
+                <a class="collapse-item" href="<?= base_url('admin/jenisbarang'); ?>">Jenis Barang</a>
+                <a class="collapse-item" href="<?= base_url('admin/barang'); ?>">Barang</a>
+
+            </div>
+        </div>
+    </li>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
             <span>Report</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-                <a class="collapse-item" href="<?=base_url('admin/report'); ?>">Stok Barang</a>
-        
+                <a class="collapse-item" href="<?= base_url('admin/report'); ?>">Stok Barang</a>
+
             </div>
         </div>
     </li>
@@ -102,8 +99,7 @@
     <hr class="sidebar-divider my-">
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= base_url('auth/logout'); ?>" data-toggle="modal"
-            data-target="#logoutModal">
+        <a class="nav-link collapsed" href="<?= base_url('auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
         </a>

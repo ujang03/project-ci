@@ -50,8 +50,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Form Utilities</h6>
-                <a class="collapse-item" href="<?=base_url('user/formpinjam'); ?>">Form Peminjaman</a>
-                <a class="collapse-item" href="<?=base_url('user/formkembali'); ?>">Form Pengembalian</a>
+                <a class="collapse-item" href="<?= base_url('user/formpinjam'); ?>">Form Peminjaman</a>
+
             </div>
         </div>
     </li>
@@ -65,8 +65,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-                <a class="collapse-item" href="<?=base_url('user/Barang'); ?>">Stok Barang</a>
-                <a class="collapse-item" href="<?=base_url('user/reportpinjam'); ?>">Status Peminjaman</a>
+                <a class="collapse-item" href="<?= base_url('user/Barang'); ?>">Stok Barang</a>
+                <a class="collapse-item" href="<?= base_url('user/reportpinjam'); ?>">Status Peminjaman</a>
             </div>
         </div>
     </li> -->
