@@ -67,7 +67,6 @@ $route['admin/checkpinjam/return/(:num)'] = 'CheckPinjam/return/$1';
 $route['admin/checkpinjam/disapprove/(:num)'] = 'CheckPinjam/disapprove/$1';
 $route['admin/checkpinjam/reject/(:num)'] = 'CheckPinjam/reject/$1';
 $route['admin/checkpinjam/store'] = 'Checkpinjam/store';
-
 $route['admin/report'] = 'Report/index';
 
 
@@ -77,3 +76,4 @@ $route['user/formpinjam'] = 'FormPinjam/index';
 $route['user/formkembali'] = 'FormKembali/index';
 $route['user/report'] = 'ReportPinjam/index';
 $route['user/formpinjam/save'] = 'FormPinjam/store';
+$route['user/formpinjam/print/(:num)'] = 'FormPinjam/print/$1';

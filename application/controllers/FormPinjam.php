@@ -35,4 +35,9 @@ class FormPinjam extends CI_Controller
 
         redirect('user/formpinjam');
     }
+
+    public function print($id)
+    {
+        
+    }
 }
