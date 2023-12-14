@@ -1,4 +1,4 @@
-<form action="<?php echo base_url('user/formpinjam/save') ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+<form action="<?php echo base_url('user/formpinjam/print') ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
     <div class="row form-group">
         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Peminjam</label></div>
         <div class="col-12 col-md-9"><input type="text" value="<?= $user['name']; ?>" class="form-control" name="" disabled></div>

@@ -38,6 +38,10 @@ class FormPinjam extends CI_Controller
 
     public function print($id)
     {
-        
+        $data['Cetakpinjam'] = $this->formpinjam_model->getAll($id);
+        $this->load->library('Pdf');
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->filename = "Peminjaman";
+        $this->pdf->load_view('user/formpinjam/print/(:num)', $data);
     }
 }

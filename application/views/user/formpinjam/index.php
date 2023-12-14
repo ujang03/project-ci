@@ -90,7 +90,7 @@
                                                                 }
                                                                 ?></td>
                                                             <td>
-                                                                <a class="btn btn-success" onclick="print('<?= base_url('user/formpinjam/print/') . $form->id ?>')"> <i class="fa fa-print"></i> </a>
+                                                                <a class="btn btn-success" href="<?= base_url('user/formpinjam/print/') . $form->id ?>"> <i class="fa fa-print"></i> </a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
