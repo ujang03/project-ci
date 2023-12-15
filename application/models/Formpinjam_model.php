@@ -16,16 +16,17 @@ class FormPinjam_model extends CI_Model
 
     public function getAll($user_id)
     {
-        $this->db->select('tb_peminjam.*,tb_barang.nama_barang');
+        $this->db->select('tb_peminjam.*,tb_barang.nama_barang,user.name');
         $this->db->from('tb_peminjam');
         $this->db->join('tb_barang', 'tb_peminjam.id_barang=tb_barang.id_barang');
+        $this->db->join('user', 'tb_peminjam.id_user=user.id');
         $this->db->where('tb_peminjam.id_user=', $user_id);
         $query = $this->db->get()->result();
 
         return $query;
 
 
-        return $this->db->get($this->_table)->result();
+        // return $this->db->get($this->_table)->result();
     }
 
     public function getActive()
@@ -36,23 +37,20 @@ class FormPinjam_model extends CI_Model
 
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["id" => $id])->row();
+        // return $this->db->get_where($this->_table, ["id" => $id])->row();
+        $this->db->select('tb_peminjam.*,tb_barang.nama_barang,user.name');
+        $this->db->from('tb_peminjam');
+        $this->db->join('tb_barang', 'tb_peminjam.id_barang=tb_barang.id_barang');
+        $this->db->join('user', 'tb_peminjam.id_user=user.id');
+        $this->db->where('tb_peminjam.id=', $id);
+        $query = $this->db->get()->result();
+
+        return $query;
     }
 
     public function save()
     {
         $post = $this->input->post();
-
-        // $this->tgl_peminjaman = $post["tgl_peminjaman"];
-        // $this->is_completed = 0;
-        // $this->db->insert($this->_table, $this);
-        // $insert_id = $this->db->insert_id();
-
-        // $this->id_peminjam = $insert_id;
-        // $this->id_user = $post["user_id"];
-        // $this->jumlah_barang = $post["jumlah_barang"];
-        // $this->id_barang = $post["id_barang"];
-        // $this->db->insert("tb_detail_peminjaman");
 
         $this->tgl_peminjaman = $post["tgl_peminjaman"];
         $this->tgl_pengembalian = $post["tgl_pengembalian"];

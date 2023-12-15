@@ -2,6 +2,7 @@
 
 use PharIo\Manifest\Email;
 
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class FormPinjam extends CI_Controller
@@ -36,12 +37,33 @@ class FormPinjam extends CI_Controller
         redirect('user/formpinjam');
     }
 
+    public function prints($id)
+    {
+        $data['cetakpinjam'] = $this->formpinjam_model->getById($id);
+        $this->load->view('user/formpinjam/print', $data);
+    }
+
     public function print($id)
     {
-        $data['Cetakpinjam'] = $this->formpinjam_model->getAll($id);
-        $this->load->library('Pdf');
-        $this->pdf->setPaper('A4', 'potrait');
-        $this->pdf->filename = "Peminjaman";
-        $this->pdf->load_view('user/formpinjam/print/(:num)', $data);
+
+        $data['cetakpinjam'] = $this->formpinjam_model->getById($id);
+
+        // panggil library yang kita buat sebelumnya yang bernama pdfgenerator
+        $this->load->library('pdf');
+
+        // title dari pdf
+        $data['title_pdf'] = 'Laporan Peminjaman Barang';
+
+        // filename dari pdf ketika didownload
+        $file_pdf = 'laporan_peminjaman_barang';
+        // setting paper
+        $paper = 'A4';
+        //orientasi paper potrait / landscape
+        $orientation = "portrait";
+
+        $html = $this->load->view('user/formpinjam/print', $data, true);
+
+        // run dompdf
+        $this->pdf->generate($html, $file_pdf, $paper, $orientation);
     }
 }
