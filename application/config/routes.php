@@ -77,3 +77,4 @@ $route['user/formkembali'] = 'FormKembali/index';
 $route['user/report'] = 'ReportPinjam/index';
 $route['user/formpinjam/save'] = 'FormPinjam/store';
 $route['user/formpinjam/print/(:num)'] = 'FormPinjam/print/$1';
+$route['user/profile'] = 'Profile/index';

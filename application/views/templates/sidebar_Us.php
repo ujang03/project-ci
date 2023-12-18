@@ -20,17 +20,10 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="<?= base_url('user/profile'); ?>">
             <i class="fas fa-fw fa-user"></i>
             <span>My Profile</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-
-                <a class="collapse-item" href="buttons.html">Edit Profile</a>
-                <a class="collapse-item" href="cards.html">Change Password</a>
-            </div>
-        </div>
     </li>
 
     <!-- Divider -->
