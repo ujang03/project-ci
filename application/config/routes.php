@@ -78,3 +78,4 @@ $route['user/report'] = 'ReportPinjam/index';
 $route['user/formpinjam/save'] = 'FormPinjam/store';
 $route['user/formpinjam/print/(:num)'] = 'FormPinjam/print/$1';
 $route['user/profile'] = 'Profile/index';
+$route['user/profile/profile'] = 'Profile/profile';

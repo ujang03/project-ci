@@ -31,29 +31,30 @@
           <hr>
         </div>
       </div>
-
       <div class="card">
         <div class="card-body">
-          <form action="" method="post">
+          <form action="<?= base_url('user/profile/profile') ?>" method="post">
+            <?= $this->session->flashdata('message'); ?>
+            <div class="form-group row">
+              <div class="col-sm-3">
+                <p class="mb-0">Current Password</p>
+              </div>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" id="currentPassword" name="currentpassword">
+                <?= form_error('currentPassword', '<small class="text-danger">', '</small>') ?>
+              </div>
+            </div>
             <div class="form-group row">
               <div class="col-sm-3">
                 <p class="mb-0">New Password</p>
               </div>
               <div class="col-sm-9">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <input type="password" class="form-control" id="password1" name="newpassword">
+                <?= form_error('password1', '<small class="text-danger">', '</small>') ?>
               </div>
             </div>
             <hr>
-            <div class="form-group row">
-              <div class="col-sm-3">
-                <label for="reEnter">reenter new password</label>
-              </div>
-              <div class="col-sm-9">
-                <input id="reEnter" type="password" class="form-control" placeholder="Password">
-              </div>
-            </div>
-            <hr>
-            <button type="button" class="btn btn-primary float-right">Change Password</button>
+            <button type="submit" class="btn btn-primary float-right">Change Password</button>
           </form>
         </div>
       </div>
