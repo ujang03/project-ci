@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="card mb-4 mt-4">
         <div class="card-header d-flex justify-content-between">
-            <h1 class="mt-1"><b>Jenis Barang</b></h1>
+            <h1 class="mt-1"><b>Satuan Barang</b></h1>
 
             <!-- Button to Open the Modal -->
             <div class="mt-2">
@@ -27,12 +27,12 @@
                     ?>
                         <tbody>
                             <tr>
-                                <td><?= $item->id?></td>
+                                <td><?= $item->id ?></td>
                                 <td><a style="text-decoration:none; color:black;"><?= $item->nama ?></a></td>
                                 <td><?= ($item->is_actived == 1) ? 'Active' : 'Deactive' ?></td>
                                 <td>
-                                    <a class="btn btn-warning" href="<?= base_url('JenisBarang/edit') ?>/<?= $item->id?>"><i class="fa fa-pen"></i></a>
-                                    <a class="btn btn-danger" onclick="deleteConfirm('<?= base_url('JenisBarang/delete/') . $item->id?>')" > <i class="fa fa-trash"></i> </a>
+                                    <a class="btn btn-warning" href="<?= base_url('JenisBarang/edit') ?>/<?= $item->id ?>"><i class="fa fa-pen"></i></a>
+                                    <a class="btn btn-danger" onclick="deleteConfirm('<?= base_url('JenisBarang/delete/') . $item->id ?>')"> <i class="fa fa-trash"></i> </a>
                                 </td>
                             </tr>
                         </tbody>
@@ -94,8 +94,8 @@
 </div>
 
 <script>
-    function deleteConfirm(url){
-        $("#btn-delete").attr('href',url);
+    function deleteConfirm(url) {
+        $("#btn-delete").attr('href', url);
         $("#deleteModal").modal();
     }
 </script>
